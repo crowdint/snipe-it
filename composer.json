@@ -14,6 +14,7 @@
 	"require": {
 	  "php": "~5.5.16",
 	  "ext-mbstring": "*",
+	  "ext-gd": "*",
 		"classpreloader/classpreloader": "1.2.0",
 		"symfony/console": "~2",
         "symfony/yaml": "~2",

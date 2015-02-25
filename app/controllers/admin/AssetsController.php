@@ -657,8 +657,8 @@ class AssetsController extends AdminController
 		 }
 
     }
-    
-    
+
+
        /**
     *  Upload the file to the server
     *
@@ -788,10 +788,10 @@ class AssetsController extends AdminController
             return Redirect::route('hardware')->with('error', $error);
         }
     }
-    
-    
-    
-    
+
+
+
+
     /**
     *  Display bulk edit screen
     *
@@ -801,20 +801,20 @@ class AssetsController extends AdminController
     {
 
 		if (Input::has('edit_asset')) {
-			
+
 			$assets = Input::get('edit_asset');
-			
+
 			$supplier_list = array('' => '') + Supplier::orderBy('name', 'asc')->lists('name', 'id');
 	        $statuslabel_list = array('' => '') + Statuslabel::lists('name', 'id');
 	        $location_list = array('' => '') + Location::lists('name', 'id');
 		}
 
 		return View::make('backend/hardware/bulk')->with('assets',$assets)->with('supplier_list',$supplier_list)->with('statuslabel_list',$statuslabel_list)->with('location_list',$location_list);
-			 
+
     }
-    
-    
-     
+
+
+
     /**
     *  Save bulk edits
     *
@@ -824,60 +824,60 @@ class AssetsController extends AdminController
     {
 
 		if (Input::has('bulk_edit')) {
-			
+
 			$assets = Input::get('bulk_edit');
-			
+
 			if ( (Input::has('purchase_date')) ||  (Input::has('rtd_location_id')) ||  (Input::has('status_id')) )  {
-			
+
 				foreach ($assets as $key => $value) {
-					
+
 					$update_array = array();
-					
-					if (Input::has('purchase_date')) {				
+
+					if (Input::has('purchase_date')) {
 						$update_array['purchase_date'] =  e(Input::get('purchase_date'));
 					}
-					
-					if (Input::has('rtd_location_id')) {				
+
+					if (Input::has('rtd_location_id')) {
 						$update_array['rtd_location_id'] = e(Input::get('rtd_location_id'));
 					}
-					
-					if (Input::has('status_id')) {				
+
+					if (Input::has('status_id')) {
 						$update_array['status_id'] = e(Input::get('status_id'));
 					}
-								
-					
+
+
 					if (DB::table('assets')
 		            ->where('id', $key)
-		            ->update($update_array)) {		
-			            
+		            ->update($update_array)) {
+
 			            $logaction = new Actionlog();
 			            $logaction->asset_id = $key;
 			            $logaction->asset_type = 'hardware';
 			            $logaction->created_at =  date("Y-m-d h:i:s");
-			            
-			            if (Input::has('rtd_location_id')) {	
+
+			            if (Input::has('rtd_location_id')) {
 			            	$logaction->location_id = e(Input::get('rtd_location_id'));
 			            }
 			            $logaction->user_id = Sentry::getUser()->id;
 			            $log = $logaction->logaction('update');
-	                        
+
 		            }
-			          					
+
 				} // endforeach
-				
+
 				return Redirect::to("hardware")->with('success', Lang::get('admin/hardware/message.update.success'));
 
-			// no values given, nothing to update	
+			// no values given, nothing to update
 			} else {
 				return Redirect::to("hardware")->with('info',Lang::get('admin/hardware/message.update.nothing_updated'));
-				
+
 			}
 
 
 		} // endif
 
-		return Redirect::to("hardware");	
-				 
+		return Redirect::to("hardware");
+
     }
     
     

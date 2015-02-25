@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "955b11a15803a272f3345c13776dae8f",
+    "hash": "43abba152b6e27e236a60177b4c0c4be",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -573,8 +573,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/f1004b8b336465fafd498ee6539cc2502d16f98f",
-                "reference": "f1004b8b336465fafd498ee6539cc2502d16f98f",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/0e11c342d167c75f083358fa7825657ea4ab10eb",
+                "reference": "0e11c342d167c75f083358fa7825657ea4ab10eb",
                 "shasum": ""
             },
             "require": {
@@ -1489,8 +1489,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fa3bc975c2ff42a40c4c565b191a31a7e7ca08b1",
-                "reference": "fa3bc975c2ff42a40c4c565b191a31a7e7ca08b1",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bba433ac380c47523fab495a1322368381df0996",
+                "reference": "bba433ac380c47523fab495a1322368381df0996",
                 "shasum": ""
             },
             "require": {
@@ -2056,8 +2056,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/cef9ca2b53e3ea513f308800c8458801540a05f7",
-                "reference": "cef9ca2b53e3ea513f308800c8458801540a05f7",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/1055ce82e84d5f0b8d0b06886d2f500c72ee044e",
+                "reference": "1055ce82e84d5f0b8d0b06886d2f500c72ee044e",
                 "shasum": ""
             },
             "require": {
@@ -2897,8 +2897,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/eeb76c48e9fa2c56eae8160cba3cf94d0c19686a",
-                "reference": "eeb76c48e9fa2c56eae8160cba3cf94d0c19686a",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/6e1aeb472cbc5b229db87983f4ef502996ea0d1f",
+                "reference": "6e1aeb472cbc5b229db87983f4ef502996ea0d1f",
                 "shasum": ""
             },
             "require": {
@@ -2944,7 +2944,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2015-02-21 13:05:27"
+            "time": "2015-02-25 12:51:44"
         },
         {
             "name": "symfony/yaml",
@@ -3132,8 +3132,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/ff902a0beb121a13a4d3c604bd6778a25aeae07a",
-                "reference": "ff902a0beb121a13a4d3c604bd6778a25aeae07a",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/5a87e6edaa9927e301ed6b16d230d977d14f1386",
+                "reference": "5a87e6edaa9927e301ed6b16d230d977d14f1386",
                 "shasum": ""
             },
             "require": {
@@ -3170,7 +3170,7 @@
                     "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "time": "2015-02-12 12:17:11"
+            "time": "2015-02-25 17:26:05"
         },
         {
             "name": "phpspec/prophecy",
@@ -3993,7 +3993,8 @@
     "prefer-lowest": false,
     "platform": {
         "php": "~5.5.16",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "ext-gd": "*"
     },
     "platform-dev": []
 }

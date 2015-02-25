@@ -184,9 +184,9 @@
 </div>
 <script>
 	$(function() {
-		
+
 	    $('input.one_required').change(function() {
-		    
+
 	        var check_checked = $('input.one_required:checked').length;
 	        console.warn(check_checked);
 	        if (check_checked > 0) {

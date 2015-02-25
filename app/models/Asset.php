@@ -29,7 +29,7 @@ class Asset extends Depreciable
     {
         return $this->model->depreciation;
     }
-    
+
     /**
     * Get uploads for this asset
     */
