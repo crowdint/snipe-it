@@ -2,6 +2,9 @@
 
 class Model extends Elegant
 {
+
+	use SoftDeletingTrait;
+    protected $dates = ['deleted_at'];
     protected $table = 'models';
 
     // Declare the rules for the form validation

@@ -29,7 +29,7 @@ class Asset extends Depreciable
     {
         return $this->model->depreciation;
     }
-    
+
     /**
     * Get uploads for this asset
     */
@@ -129,7 +129,7 @@ class Asset extends Depreciable
 
     public function model()
     {
-        return $this->belongsTo('Model','model_id');
+        return $this->belongsTo('Model','model_id')->withTrashed();
     }
 
 	/**
