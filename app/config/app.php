@@ -43,7 +43,7 @@ return array(
     */
 
     'cipher' => MCRYPT_RIJNDAEL_256,
-    
+
     /*
     |--------------------------------------------------------------------------
     | Prevent Password changes
@@ -102,6 +102,8 @@ return array(
         'Cartalyst\Sentry\SentryServiceProvider',
         'Chumper\Datatable\DatatableServiceProvider',
         'Dinesh\Barcode\BarcodeServiceProvider',
+        'Maer\GoogleAuth\ServiceProvider'
+
 
     ),
 

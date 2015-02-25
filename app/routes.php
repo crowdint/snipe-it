@@ -47,12 +47,12 @@ Route::group(array('prefix' => 'hardware', 'namespace' => 'Controllers\Admin', '
     Route::get('{assetId}/deletefile/{fileId}', array('as' => 'delete/assetfile', 'uses' => 'AssetsController@getDeleteFile'));
     Route::get('{assetId}/showfile/{fileId}', array('as' => 'show/assetfile', 'uses' => 'AssetsController@displayFile'));
     Route::post('{assetId}/edit', 'AssetsController@postEdit');
-    
-    Route::post('bulkedit', 
-    	array('as' => 'hardware/bulkedit', 
+
+    Route::post('bulkedit',
+    	array('as' => 'hardware/bulkedit',
     	'uses' => 'AssetsController@postBulkEdit'));
-    Route::post('bulksave', 
-    	array('as' => 'hardware/bulksave', 
+    Route::post('bulksave',
+    	array('as' => 'hardware/bulksave',
     	'uses' => 'AssetsController@postBulkSave'));
 
 
@@ -257,6 +257,10 @@ Route::group(array('prefix' => 'auth'), function () {
     # Login
     Route::get('signin', array('as' => 'signin', 'uses' => 'AuthController@getSignin'));
     Route::post('signin', 'AuthController@postSignin');
+
+    #Google login
+    Route::get('google-auth', 'GoauthController@signin');
+    Route::get('google-auth/callback', 'GoauthController@callback');
 
     # Register
     #Route::get('signup', array('as' => 'signup', 'uses' => 'AuthController@getSignup'));

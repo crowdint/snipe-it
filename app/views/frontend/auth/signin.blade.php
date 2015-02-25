@@ -49,6 +49,7 @@ Account Sign in ::
              <div class="field-box">
                 <label class="col-md-3 control-label checkbox-inline"></label>
                   <input type="checkbox" name="remember-me" id="remember-me" value="1" /> Remember me
+                  <a href="{{ url('/auth/google-auth') }}" class="g-signin" style="margin-left: 50px;" id="signInButton">Sign in with Google</a>
                 </label>
             </div>
 
