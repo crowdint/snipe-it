@@ -56,8 +56,6 @@
 		],
     "post-install-cmd": [
       "php artisan cache:clear",
-      "mkdir app/storage/logs",
-      "mkdir app/storage/views",
       "chmod -R 0777 app/storage"
       ],
 		"post-create-project-cmd": [
