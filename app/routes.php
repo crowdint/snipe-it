@@ -255,8 +255,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'admin-auth', 'namespace' =>
 Route::group(array('prefix' => 'auth'), function () {
 
     # Login
-    Route::get('signin', array('as' => 'signin', 'uses' => 'AuthController@getSignin'));
-    Route::post('signin', 'AuthController@postSignin');
+   Route::get('signin', array('as' => 'signin', 'uses' => 'AuthController@getSignin'));
+   #Route::post('signin', 'AuthController@postSignin');
 
     #Google login
     Route::get('google-auth', 'GoauthController@signin');
@@ -264,7 +264,7 @@ Route::group(array('prefix' => 'auth'), function () {
 
     # Register
     #Route::get('signup', array('as' => 'signup', 'uses' => 'AuthController@getSignup'));
-    Route::post('signup', 'AuthController@postSignup');
+    #Route::post('signup', 'AuthController@postSignup');
 
     # Account Activation
     Route::get('activate/{activationCode}', array('as' => 'activate', 'uses' => 'AuthController@getActivate'));
