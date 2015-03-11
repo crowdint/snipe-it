@@ -1,11 +1,17 @@
 <?php
 class AssetsImportSeeder extends Seeder{
 
+  var $file;
+
+  public function setFileName($name){
+    $this->file = $name;
+  }
+
   public function run(){
     $location = Location::where('name', '=', 'Crowd Colima')->get();
     $location = $location[0];
     $assets = [];
-    Excel::load('csv/assets.csv', function($reader)use($location, $assets) {
+    Excel::load("csv/$this->file", function($reader)use($location, $assets) {
       foreach($reader->get() as $row){
 
         $costo = preg_replace('/[^0-9.]*/','', $row['costo']);
