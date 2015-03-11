@@ -31,7 +31,8 @@
 		"erusev/parsedown": "dev-master",
 		"bacon/bacon-qr-code": "dev-master",
 		"intervention/image": "dev-master",
-    "maer/google-auth": "dev-master"
+    "maer/google-auth": "dev-master",
+		"maatwebsite/excel": "1.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*",

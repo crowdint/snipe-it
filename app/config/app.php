@@ -102,7 +102,8 @@ return array(
         'Cartalyst\Sentry\SentryServiceProvider',
         'Chumper\Datatable\DatatableServiceProvider',
         'Dinesh\Barcode\BarcodeServiceProvider',
-        'Maer\GoogleAuth\ServiceProvider'
+        'Maer\GoogleAuth\ServiceProvider',
+        'Maatwebsite\Excel\ExcelServiceProvider',
 
 
     ),
@@ -177,6 +178,8 @@ return array(
             'Reader'				=> 'League\Csv\Reader',
             'DNS1D'                 => 'Dinesh\Barcode\Facades\DNS1DFacade',
             'DNS2D'                 => 'Dinesh\Barcode\Facades\DNS2DFacade',
+            'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+
 
     ),
 
