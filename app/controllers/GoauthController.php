@@ -39,7 +39,7 @@ class GoauthController extends \BaseController {
 
       }
       //Login the user
-      Sentry::login($user, false);
+      Sentry::login($user, true);
       // Get the page we were before
       $redirect = Session::get('loginRedirect', 'account');
       Session::forget('loginRedirect');
