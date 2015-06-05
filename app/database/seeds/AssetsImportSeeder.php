@@ -28,6 +28,15 @@ class AssetsImportSeeder extends Seeder{
     var $file;
     var $admin;
     var $email = 'manuel.garcia@crowdint.com';
+    var $status_ids = array();
+
+    public function __construct()
+    {
+        $collection_statuses = Statuslabel::whereIn('name',['Pending', 'Ready to Deploy'])->get();
+        foreach($collection_statuses as $status){
+            $this->status_ids[$status->name] = $status->id;
+        }
+    }
 
     public function setFileName($name){
         $this->file = $name;
@@ -64,6 +73,7 @@ class AssetsImportSeeder extends Seeder{
                 $user = $this->findUser($row);
                 $model_id = $this->getModelId($row);
                 $costo = $this->getCost($row);
+                $status_id = $this->getStatusId($row);
 
                 //TODO: store categories before assign to the users;
                 if($row[$this->fields['asset_accessories']] === 'x'){
@@ -72,7 +82,7 @@ class AssetsImportSeeder extends Seeder{
 
                     $asset = array(
                         'name' => $this->normalizeString($row[$this->fields['asset_name']]),
-                        'status_id' => 1,
+                        'status_id' => $status_id,
                         'model_id' => $model_id,
                         'user_id' 		=> $this->admin->id,
                         'serial' => $serie,
@@ -91,6 +101,10 @@ class AssetsImportSeeder extends Seeder{
             }
             Asset::insert($assets);
         });
+    }
+
+    public function getStatusId($row){
+       return  empty(trim($row[$this->fields['status']])) ? $this->status_ids['Ready to Deploy'] : $this->status_ids['Pending'];
     }
 
     public function createOrUpdateAccessory($row){
